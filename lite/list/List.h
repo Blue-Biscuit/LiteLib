@@ -54,7 +54,7 @@ namespace lite {
          * @return true if the given index was in range.
          * @return false if the given index was out of range.
          */
-        bool at(unsigned int i, T& out) {
+        bool at(unsigned int i, T& out) const {
             if (i < _size) {
                 out = _data[i];
 

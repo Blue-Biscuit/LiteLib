@@ -13,5 +13,11 @@ int main() {
 
     lite::List<char> b = l;
 
+    l = b;
+
+    for (unsigned int i = 0; i < l.size(); i++) {
+        std::cout << *(l + i);
+    }
+
     std::cout << std::endl;
 }

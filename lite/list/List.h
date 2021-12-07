@@ -47,6 +47,27 @@ namespace lite {
         }
 
         /**
+         * @brief Copy operator.
+         * 
+         * @param copy the list to copy.
+         * @return List<T>& A reference
+         */
+        List<T>& operator=(const List<T>& copy) {
+            if (this != &copy) {
+                delete _data;
+
+                _size = copy.size();
+                _data = new T[_size];
+
+                for (unsigned int i = 0; i < _size; i++) {
+                    _data[i] = copy.get(i);
+                }
+            }
+
+            return *this;
+        }
+
+        /**
          * @brief Dereference operator. The difference
          * between this and the indexing operator is
          * checking: this does not have runtime checking!

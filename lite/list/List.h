@@ -37,6 +37,24 @@ namespace lite {
         }
 
         /**
+         * @brief A boundary-checked accessor method.
+         * 
+         * @param i The index to get at.
+         * @param out The output.
+         * @return true if the given index was in range.
+         * @return false if the given index was out of range.
+         */
+        bool at(unsigned int i, T& out) {
+            if (i < _size) {
+                out = _data[i];
+
+                return true;
+            }
+
+            return false;
+        }
+
+        /**
          * @brief Gets the size of the list.
          * 
          * @return The size.

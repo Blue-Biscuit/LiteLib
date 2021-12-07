@@ -39,6 +39,14 @@ namespace lite {
         }
 
         /**
+         * @brief Destroy the List object
+         * 
+         */
+        ~List() {
+            delete[] _data;
+        }
+
+        /**
          * @brief Dereference operator. The difference
          * between this and the indexing operator is
          * checking: this does not have runtime checking!

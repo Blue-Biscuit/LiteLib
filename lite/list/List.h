@@ -15,6 +15,16 @@ namespace lite {
         public:
 
         /**
+         * @brief Construct a new List object
+         * 
+         * @param capacity the capacity to construct at.
+         */
+        List(unsigned int capacity) {
+            _size = capacity;
+            _data = new T[_size];
+        }
+
+        /**
          * @brief Dereference operator. The difference
          * between this and the indexing operator is
          * checking: this does not have runtime checking!

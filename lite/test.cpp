@@ -11,9 +11,7 @@ int main() {
     *(l + 4) = 'o';
 
 
-    for (unsigned int i = 0; i < l.size(); i++) {
-        std::cout << *(l + i);
-    }
+    lite::List<char> b = l;
 
     std::cout << std::endl;
 }

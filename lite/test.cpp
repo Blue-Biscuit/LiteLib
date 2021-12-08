@@ -2,6 +2,15 @@
 
 #include <iostream>
 
+void setChar(char& c) {
+    c = 'a';
+}
+
+void printChar(const char& c) {
+    std::cout << c;
+}
+
+
 int main() {
     lite::List<char> l(5);
     *l = 'h';
@@ -11,13 +20,8 @@ int main() {
     *(l + 4) = 'o';
 
 
-    lite::List<char> b = l;
-
-    l = b;
-
-    for (unsigned int i = 0; i < l.size(); i++) {
-        std::cout << *(l + i);
-    }
+    l.forEach(&setChar);
+    l.forEach(&printChar);
 
     std::cout << std::endl;
 }

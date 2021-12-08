@@ -126,6 +126,28 @@ namespace lite {
             return _size;
         }
 
+        /**
+         * @brief performs the callback for each member of the list.
+         * 
+         * @param callback the callback function.
+         */
+        void forEach(void(*callback)(T& e)) {
+            for (unsigned int i = 0; i < _size; i++) {
+                callback(_data[i]);
+            }
+        }
+
+        /**
+         * @brief performs the callback for each member of the list.
+         * 
+         * @param callback the callback function.
+         */
+        void forEach(void(*callback)(const T& e)) const {
+            for (unsigned int i = 0; i < _size; i++) {
+                callback(_data[i]);
+            }
+        }
+
         private:
 
         T* _data;
